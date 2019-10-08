@@ -1,0 +1,8 @@
+Generate keystore with self-signed certificate:
+keytool -genkeypair -keystore servicebroker.keystore -keyalg RSA -alias servicebroker  -storepass changeme -keypass changeme -validity 999
+
+Export the generated certificate:
+keytool -exportcert -keystore servicebroker.keystore -alias servicebroker -storepass changeme -file servicebroker.cer
+
+Import certificate into custom truststore:
+keytool -importcert -keystore servicebroker.truststore -alias servicebroker -storepass changeme -file servicebroker.cer -noprompt

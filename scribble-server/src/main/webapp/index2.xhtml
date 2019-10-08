@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui" xmlns:pe="http://primefaces.org/ui/extensions" xmlns:ui="http://java.sun.com/jsf/facelets">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+
+<h:head>
+	<title>#{message.browser_title}</title>
+</h:head>
+
+
+<h:body>
+	<div id="headerPanel"></div>
+	<div id="menuPanel" style="font-size: 11pt">
+	   <h:form id="menuForm">
+			<p:menubar>
+				<p:submenu label="#{message.menuitem_documentation}">
+					<p:menuitem value="#{message.menuitem_documentation_developer}" actionListener="#{menubar.actionDeveloperDocumentation}" ajax="false" />
+					<p:menuitem value="#{message.menuitem_documentation_admin}" actionListener="#{menubar.actionAdminDocumentation}" ajax="false" />
+				</p:submenu>
+	            <p:menuitem value="#{message.menuitem_download}" actionListener="#{menubar.actionDownload}" ajax="false" />
+	            <p:menuitem value="#{message.menuitem_support}" actionListener="#{menubar.actionSupport}" ajax="false" />
+	            
+	            <f:facet name="options">
+		            <p:commandButton type="button" value="Logout" icon="ui-icon-extlink" />
+		        </f:facet>
+			</p:menubar>
+		</h:form>
+	</div>
+	<div id="content">
+	</div>
+	<div id="footer">
+	</div>
+</h:body>
+</html>

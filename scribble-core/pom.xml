@@ -1,0 +1,102 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.ai-republic</groupId>
+		<artifactId>scribble</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<artifactId>scribble-core</artifactId>
+	<packaging>jar</packaging>
+
+	<properties>
+		<encoding>UTF-8</encoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jwktl.version>1.0.1</jwktl.version>
+		<orient.version>2.1.4</orient.version>
+	</properties>
+
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox</artifactId>
+			<version>2.0.0-RC1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.annotation</groupId>
+			<artifactId>javax.annotation-api</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+
+		<!-- JSON libs -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.jaxrs</groupId>
+			<artifactId>jackson-jaxrs-json-provider</artifactId>
+		</dependency>
+
+		<!-- Utils -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-pool2</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.enterprise</groupId>
+			<artifactId>cdi-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.jms</groupId>
+			<artifactId>javax.jms-api</artifactId>
+			<version>2.0.1</version>
+		</dependency>
+
+		<!-- Graph database -->
+		<dependency>
+			<groupId>com.orientechnologies</groupId>
+			<artifactId>orientdb-graphdb</artifactId>
+			<version>${orient.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>commons-beanutils</artifactId>
+					<groupId>commons-beanutils</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>ant</artifactId>
+					<groupId>org.apache.ant</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- JWKTL (Wikitionary parser) -->
+		<dependency>
+			<groupId>de.tudarmstadt.ukp.jwktl</groupId>
+			<artifactId>jwktl</artifactId>
+			<version>${jwktl.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>ant</artifactId>
+					<groupId>org.apache.ant</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+</project>

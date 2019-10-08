@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.ai-republic</groupId>
+		<artifactId>scribble</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<artifactId>scribble-importer</artifactId>
+	<packaging>jar</packaging>
+
+	<properties>
+		<encoding>UTF-8</encoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jwktl.version>1.0.1</jwktl.version>
+		<orient.version>2.1.4</orient.version>
+	</properties>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>com.ai-republic</groupId>
+			<artifactId>scribble-core</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.weld.se</groupId>
+			<artifactId>weld-se-core</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- Graph database -->
+		<dependency>
+			<groupId>com.orientechnologies</groupId>
+			<artifactId>orientdb-graphdb</artifactId>
+			<version>${orient.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>commons-beanutils</artifactId>
+					<groupId>commons-beanutils</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>ant</artifactId>
+					<groupId>org.apache.ant</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- JWKTL (Wikitionary parser) -->
+		<dependency>
+			<groupId>de.tudarmstadt.ukp.jwktl</groupId>
+			<artifactId>jwktl</artifactId>
+			<version>${jwktl.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>ant</artifactId>
+					<groupId>org.apache.ant</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+</project>

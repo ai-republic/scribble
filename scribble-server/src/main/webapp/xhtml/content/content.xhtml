@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+
+<ui:composition>
+	<p:outputPanel id="contentPanel" >#{message.search_label_search}: <p:outputLabel value="#{searchBb.searchText}" />
+    <h:form id="graphContextMenuForm">
+		<p:contextMenu id="graphContextMenu" for="graphPanel" model="#{graphBb.getMenuModel()}" />
+	</h:form>
+	<p:diagram id="graphPanel" value="#{graphBb.graphModel}" var="node" styleClass="ui-widget-content" style="width:100%; height:800px; border: 1px solid black;">
+		<f:facet name="element">
+			<p:outputPanel id="nodePanel" style="width:100%; height:100%;">
+			<h:form id="nodeForm" style="width:100%; height:100%;">
+				<p:commandLink style="width:100%; height:100%;" action="#{graphBb.selectNode()}" update=":graphContextMenuForm:graphContextMenu">
+					<f:param name="nodeId" value="#{node.id}"/>
+					<p:outputPanel style="width:100%; height:100%;">
+			            <h:outputText value="#{node.word}" style="display:block;margin-top:10px;"/><br/>
+			            <h:outputText value="(#{node.id})" style="display:block;margin-top:2px;"/>
+			            <hr/>
+			            <h:outputText value="#{node.context}" style="display:block;margin-top:10px;"/>
+		            </p:outputPanel>
+	            </p:commandLink>
+	        </h:form>
+	        </p:outputPanel>
+       	</f:facet>
+	</p:diagram>
+	</p:outputPanel>
+</ui:composition>
+</html>
