@@ -29,7 +29,7 @@
 		<commons-lang.version>3.2.1</commons-lang.version>
 		<commons-pool.version>2.3</commons-pool.version>
 		<findbugs.version>3.0.0</findbugs.version>
-		<jackson.version>2.9.10</jackson.version>
+		<jackson.version>2.10.1</jackson.version>
 		<jglue.version>4.1.0</jglue.version>
 		<junit.version>4.12</junit.version>
 		<inject.version>2.6.0</inject.version>
